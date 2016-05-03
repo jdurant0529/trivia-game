@@ -28,6 +28,11 @@ header{
 #questionSection button {
 	width: 100px;
 }
+
+#questionSection img {
+	width: 450px;
+}
+
 #questionSection button:hover {
 	background:yellow;
 }
