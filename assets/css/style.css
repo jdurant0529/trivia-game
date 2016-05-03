@@ -25,6 +25,12 @@ header{
 .MainSection{
 	text-align: center;
 }
+#questionSection button {
+	width: 100px;
+}
+#questionSection button:hover {
+	background:yellow;
+}
 
 #display{
   background: black;
