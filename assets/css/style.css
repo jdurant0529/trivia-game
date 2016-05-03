@@ -16,9 +16,31 @@ h1, h2, h3, h4, h5 {
 
 header{
 	height:150px;
-	margin: 0 auto;
+	margin: 15px 0 auto;
 	text-align: center;
 	vertical-align: center;
+
+}
+
+.MainSection{
+	text-align: center;
+}
+
+#display{
+  background: black;
+  color:green;
+  font-size: 40px;
+  font-family: monospace;
+  text-align: center;
+}
+
+#start-button{
+  text-align: center;
+}
+button{
+  height:50px;
+  width:250px;
+  margin: 15px;
 }
 
 .right{
