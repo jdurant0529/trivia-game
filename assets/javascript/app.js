@@ -11,8 +11,8 @@ var game = {
 
 
 	trivia : [
-    	{id: 1, Question: 'Question 1?', Options: ['option1', 'Arizona Cardinals', 'option3', 'option4' ], answer: 'Arizona Cardinals', image: "<img src='assets/images/Arizona_Cardinals.jpg'>"},
-    	{id: 2, Question: 'Question 2?', Options: ['option1', 'option2', 'option3', 'option4' ], answer: 'option2'},
+    	{id: 1, image: "<img src='assets/images/Arizona_Cardinals.jpg'>", Options: ['Atlanta Falcons', 'Arizona Cardinals', 'Seattle Seahawks', 'Toronto Blue-Jays' ], answer: 'Arizona Cardinals'},
+    	{id: 2, image: "<img src='assets/images/New_York_Giants.jpg'>", Options: ['New York Giants', 'New York Jets', 'New York Yankees', 'New York Mets' ], answer: 'New York Giants'},
     	{id: 3, Question: 'Question 3?', Options: ['option1', 'option2', 'option3', 'option4' ], answer: 'option2'},
     	{id: 4, Question: 'Question 4?', Options: ['option1', 'option2', 'option3', 'option4' ], answer: 'option2'},
     	{id: 5, Question: 'Question 5?', Options: ['option1', 'option2', 'option3', 'option4' ], answer: 'option2'},
@@ -69,36 +69,33 @@ var game = {
 	    return minutes + ":" + seconds;
 	},
 	nextQuestion: function(q){
-		console.log('game.trivia[q].Question = ' + game.trivia[q].Question);
-		console.log('q = ' + q);
 		$('#questionSection').html('<h1>Name this team!</h1>' + game.trivia[q].image + '<div>');
 
-			for (var i = 0; i < game.trivia[q].Options.length; i++) {    
+			for (var i = 0; i < game.trivia[q].Options.length; i++) {    // start for loop to create anwer option buttons
 			    var b = $('<button>');
 			    b.addClass('option ' + game.trivia[q].id);
-			    b.attr('data-Option1', game.trivia[q].Options[i]); 
-			    // b.attr('data-HP', characters[i].HP);
-			    // b.attr('data-AP', characters[i].AP);
-			    // b.attr('data-CP', characters[i].CP);
+			    b.attr('data-option', game.trivia[q].Options[i]);
+			    b.attr('data-answer', game.trivia[q].answer);
 			    b.attr('data-num', i);
 			    b.text(game.trivia[q].Options[i]);
 			    b.attr('id',game.trivia[q].id);
-			    //b.html(game.trivia[q].image);
-
-
 			    $("#questionSection").append(b); 
-			    //alert('watch this');
-			}
-		$('#questionSection').append('</div>')
-		//return displayHTML;
-	},
+			}                                    // end of for loop creating anwser option buttons
+		$('#questionSection').append('</div>');  // end new div to seperate team image from anwer option buttons
 
-	nextresult: function (success){
-		console.log();
-	},
+		$('.option').on('click',function(){  // start of onclick for answer option buttons
+			console.log($(this).data('option'));
+			console.log($(this).data('answer'));
+			var check = ($(this).data('option') == $(this).data('answer'))
+			console.log(check);
+			
+			
+		});		//end of onclick for answer option buttons
+	},          // end of nextQuestion -- creates and adds all things pertaining to question into question Section.
 
-	// $('#button').on('click',function(){
-	// 	console.log('I am here');
-	// });
+	nextResponse: function(c){
+		console.log(c);
+	}
+
 };
 
