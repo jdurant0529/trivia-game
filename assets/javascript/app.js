@@ -71,6 +71,7 @@ var game = {
     	$('#resultSection').empty();
     	$('#resultSection').hide();
     	$('#questionSection').show();
+    	$('#responseSection').show();
     	$('#start').show();
   	},
   	stop: function(){
@@ -81,12 +82,13 @@ var game = {
   		$('#questionSection').show();
   		counter = setInterval(game.begin, 1000);
   		$('#start').hide();
-  		console.log(game.questionNum);
-  		var question = game.nextQuestion(game.questionNum);
-  		$('#questionSection').html(question);
+  	
+  		game.nextQuestion(game.questionNum);
+  		//$('#questionSection').html(question);
 
   		$('#responseSection').empty();
   		$('#resultSection').empty();
+  		$('#resultSection').hide();
  	},
 
 
@@ -104,7 +106,7 @@ var game = {
 	    return minutes + ":" + seconds;
 	},
 	nextQuestion: function(q){
-		
+		$('#responseSection').hide();
 		
 		$('#questionSection').html('<h1>Name this team!</h1>' + game.trivia[q].image + '<div>');
 
@@ -126,28 +128,30 @@ var game = {
 		// }, 10000)
 		$('.option').on('click',function(){  // start of onclick for answer option buttons		
 			check = ($(this).data('option') == $(this).data('answer'))
-			clearTimeout();
+			// clearTimeout();
 			game.nextResponse(check);
 		});		//end of onclick for answer option buttons
 	},          // end of nextQuestion -- creates and adds all things pertaining to question into question Section.
 
 	nextResponse: function(c){
 		console.log(c);
+		$('#responseSection').show();
 		
-		$('#questionSection').empty();
-
+		clearInterval(counter);
 		if (c == true) {
 			var responseHTML = "Congratulations!!  Thats correct!!"
 			game.correctCount++;
 			$('#responseSection').html(responseHTML);
+
 		} else {
 			var responseHTML = "Sorry, that was not correct."
 			$('#responseSection').html(responseHTML);
 		}
+		$('#questionSection').empty();
 		game.questionNum++
-		console.log(game.questionNum);
-		console.log(game.time + ' is game time');
+		
 		setTimeout(function(){
+			counter = setInterval(game.begin, 1000);
 			game.nextQuestion(game.questionNum)
 	  		$('#responseSection').empty();
 	  		$('#resultSection').empty();
