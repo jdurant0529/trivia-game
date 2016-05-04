@@ -119,15 +119,20 @@ var game = {
 			    $("#questionSection").append(b); 
 			}                                    // end of for loop creating anwser option buttons
 		$('#questionSection').append('</div>');  // end new div to seperate team image from anwer option buttons
-
+		var check = false;
+		timeMax = setTimeout(function(){
+			check= false;
+			game.nextResponse(check);
+		}, 5000)
 		$('.option').on('click',function(){  // start of onclick for answer option buttons
 			//console.log($(this).data('option'));
 			//console.log($(this).data('answer'));
-			var check = ($(this).data('option') == $(this).data('answer'))
+
+			check = ($(this).data('option') == $(this).data('answer'))
 			//console.log(check);
-			
-			
-				game.nextResponse(check);
+			clearTimeout(timeMax);
+			game.nextResponse(check);
+				
 			
 			
 		});		//end of onclick for answer option buttons
@@ -150,13 +155,16 @@ var game = {
 		game.questionNum++
 		console.log(game.questionNum);
 		console.log(game.time + ' is game time');
-	//	console.log(currentTime + ' is current time');
-		if (game.time < game.time-3){
-			question = game.nextQuestion(game.questionNum);
-	  		$('#questionSection').html(question);
+		setTimeout(function(){
+			game.nextQuestion(game.questionNum)
 	  		$('#responseSection').empty();
 	  		$('#resultSection').empty();
-  		}
+		}, 3000);
+		//setTimeout(game.nextQuestion(game.questionNum),3000);
+		//game.nextQuestion(game.questionNum)
+	  	//$('#questionSection').html(question);
+
+  	
 	},
 
 
