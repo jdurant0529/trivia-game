@@ -120,32 +120,24 @@ var game = {
 			}                                    // end of for loop creating anwser option buttons
 		$('#questionSection').append('</div>');  // end new div to seperate team image from anwer option buttons
 		var check = false;
-		timeMax = setTimeout(function(){
-			check= false;
-			game.nextResponse(check);
-		}, 5000)
-		$('.option').on('click',function(){  // start of onclick for answer option buttons
-			//console.log($(this).data('option'));
-			//console.log($(this).data('answer'));
-
+		// setTimeout(function(){
+		// 	check= false;
+		// 	game.nextResponse(check);
+		// }, 10000)
+		$('.option').on('click',function(){  // start of onclick for answer option buttons		
 			check = ($(this).data('option') == $(this).data('answer'))
-			//console.log(check);
-			clearTimeout(timeMax);
+			clearTimeout();
 			game.nextResponse(check);
-				
-			
-			
 		});		//end of onclick for answer option buttons
 	},          // end of nextQuestion -- creates and adds all things pertaining to question into question Section.
 
 	nextResponse: function(c){
 		console.log(c);
-		//var currentTime = game.time-3;
 		
 		$('#questionSection').empty();
 
 		if (c == true) {
-			var responseHTML = "Thats correct!!"
+			var responseHTML = "Congratulations!!  Thats correct!!"
 			game.correctCount++;
 			$('#responseSection').html(responseHTML);
 		} else {
@@ -159,13 +151,8 @@ var game = {
 			game.nextQuestion(game.questionNum)
 	  		$('#responseSection').empty();
 	  		$('#resultSection').empty();
-		}, 3000);
-		//setTimeout(game.nextQuestion(game.questionNum),3000);
-		//game.nextQuestion(game.questionNum)
-	  	//$('#questionSection').html(question);
-
-  	
-	},
+		}, 2000);	
+	},  //  end of nextResponse Section
 
 
 	showResults: function(){
@@ -173,6 +160,8 @@ var game = {
     	$('#reset').show();
     	$('#questionSection').empty();
     	$('#responseSection').empty();
+    	$('#questionSection').hide();
+    	$('#responseSection').hide();
      	$('#resultSection').show();
      	var resultsHTML = '<h1>There were ' + game.questionNum + ' total questions asked.</h1>' + 
      		'<h1>You answered ' + game.correctCount	+ ' correctly.</h1>'
