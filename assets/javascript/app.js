@@ -151,12 +151,12 @@ var game = {
 		console.log(game.questionNum);
 		console.log(game.time + ' is game time');
 	//	console.log(currentTime + ' is current time');
-		//if (game.time < game.time-3){
+		if (game.time < game.time-3){
 			question = game.nextQuestion(game.questionNum);
 	  		$('#questionSection').html(question);
 	  		$('#responseSection').empty();
 	  		$('#resultSection').empty();
-  		//}
+  		}
 	},
 
 
