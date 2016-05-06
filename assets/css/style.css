@@ -22,7 +22,24 @@ h1, h2, h3, h4, h5 {
 	font-weight: 700;
 	color: black;
 }
-
+h1 { 
+    display: block;
+    font-size: 2em;
+    margin-top: 0.67em;
+    margin-bottom: 0.67em;
+    margin-left: 0;
+    margin-right: 0;
+    font-weight: bold;
+}
+h2 {
+    display: block;
+    font-size: 1.5em;
+    margin-top: 0.83em;
+    margin-bottom: 0.83em;
+    margin-left: 0;
+    margin-right: 0;
+    font-weight: bold;
+}
 
 .panel-title{
 	height:25px;
@@ -51,7 +68,7 @@ h1, h2, h3, h4, h5 {
 
 #questionSection img {
 	width: 400px;
-	max-height: 320px;	
+	max-height: 300px;	
 }
 
 #buttonSection button:hover {
@@ -59,13 +76,14 @@ h1, h2, h3, h4, h5 {
 }
 #buttonSection button {
 	width: 400px;
-	margin: 15px auto;	
+	margin: 20px auto;	
 }
 #buttonSection {
 	margin: 0 auto;
 }
 #responseSection {
 	min-height: 320px;
+	line-height: 320px;
 }
 #resultSection{
 	min-height: 160px;
@@ -87,7 +105,7 @@ h1, h2, h3, h4, h5 {
 button{
   height:50px;
   width:250px;
-  margin: 15px;
+  margin:20px;
 }
 
 .right{

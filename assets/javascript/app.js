@@ -1,3 +1,5 @@
+
+
 window.onload = function(){
  $('#start').on('click', game.start);
  $('#reset').on('click', game.reset);
@@ -15,6 +17,7 @@ var game = {
 	questionNum : 0,
 	correctCount: 0,
 	responseTime: 3,
+	questionCount:0,
 
 
 	trivia : [
@@ -65,11 +68,12 @@ var game = {
 
 	    	
 	    }
+	    questionNum = Math.floor(Math.random()*game.trivia.length);
   	},
   	reset: function(){
 	    game.time = 15;
-	    game.questionNum = 0;
 	    game.correctCount = 0;
+	    game.questionCount = 0;
 	    converted = game.timeConverter(game.time);
     	$('#display').html(converted);
     	$('#reset').hide();
@@ -92,7 +96,9 @@ var game = {
   		$('#start-button').hide();
   		counter = setInterval(game.begin, 1000);
   		$('#start').hide();
-  		
+  		game.questionNum = Math.floor(Math.random()*game.trivia.length);
+
+  		//console.log(questionNum)
   		game.nextQuestion(game.questionNum);
   		//$('#questionSection').html(question);
 
@@ -121,7 +127,7 @@ var game = {
 		$('#buttonSection').show();
 		$('#questionSection').show();
 		
-		$('#questionSection').html('<h1>Name this team!</h1>' + game.trivia[q].image + '<div>');
+		$('#questionSection').html('<h2>Name this team!</h2>' + game.trivia[q].image + '<div>');
 
 			for (var i = 0; i < game.trivia[q].Options.length; i++) {    // start for loop to create anwer option buttons
 			    var b = $('<button>');
@@ -142,6 +148,8 @@ var game = {
 		// }, 10000)
 		$('.option').on('click',function(){  // start of onclick for answer option buttons		
 			check = ($(this).data('option') == $(this).data('answer'))
+			game.questionCount++;
+
 			// clearTimeout();
 			game.nextResponse(check);
 		});		//end of onclick for answer option buttons
@@ -158,15 +166,18 @@ var game = {
 		if (c == true) {
 			var responseHTML = "Congratulations!!  Thats correct!!"
 			game.correctCount++;
-			$('#responseSection').html(responseHTML);
+			$('#responseSection').html('<h3>' + responseHTML + '</h3>');
 
 		} else {
-			var responseHTML = "Sorry, that was not correct."
-			$('#responseSection').html(responseHTML);
+			var responseHTML = "Sorry, that was not correct." 
+			$('#responseSection').html('<h3>' + responseHTML + '</h3>');
 		}
 		$('#questionSection').empty();
 		$('#buttonSection').empty();
 		game.questionNum++
+		if (game.questionNum > 32) {
+			game.questionNum = game.questionNum -33;
+		}
 		
 		setTimeout(function(){
 			counter = setInterval(game.begin, 1000);
@@ -189,8 +200,8 @@ var game = {
     	$('#responseSection').hide();
 
      	$('#resultSection').show();
-     	var resultsHTML = '<h1>There were ' + game.questionNum + ' total questions asked.</h1>' + 
-     		'<h1>You answered ' + game.correctCount	+ ' correctly.</h1>'
+     	var resultsHTML = '<h2>There were ' + game.questionCount + ' total questions asked.</h2>' + 
+     		'<h2>You answered ' + game.correctCount	+ ' correctly.</h2>'
 		$('#resultSection').html(resultsHTML);
 	}
 
