@@ -42,7 +42,7 @@ h1, h2, h3, h4, h5 {
 }
 
 #start-button {
-	min-height: 320px
+	min-height: 160px
 }
 #questionSection {
 	min-height: 125px;
@@ -68,10 +68,10 @@ h1, h2, h3, h4, h5 {
 	min-height: 320px;
 }
 #resultSection{
-	min-height: 240px;
+	min-height: 160px;
+	text-align: center;
 }
 #display{
-
   background: black;
   color:yellow;
   font-size: 40px;
@@ -88,11 +88,6 @@ button{
   height:50px;
   width:250px;
   margin: 15px;
-}
-
-#resltsSection{
-	text-align: center;
-
 }
 
 .right{

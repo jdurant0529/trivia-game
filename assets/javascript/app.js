@@ -4,7 +4,7 @@ window.onload = function(){
  $('#reset').hide();
  $('#questionSection').hide();
  $('#responseSection').hide();
- $('#resultSection').hide();
+ $('#resultSection').show();
  
 
 };
@@ -74,8 +74,8 @@ var game = {
     	$('#display').html(converted);
     	$('#reset').hide();
     	$('#resultSection').empty();
-    	$('#resultSection').hide();
-    	$('#resultSection').hide();
+    	
+    	//$('#resultSection').hide();
     //	$('#questionSection').show();
     	$('buttonSection').show();
     	// $('#responseSection').show();
@@ -180,7 +180,7 @@ var game = {
 	showResults: function(){
 		game.stop();
     	$('#reset').show();
-    	$('star-button').show();
+    	$('#start-button').show();
     	$('#questionSection').empty();
     	$('#buttonSection').empty();
     	$('#responseSection').empty();
