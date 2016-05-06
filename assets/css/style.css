@@ -40,6 +40,15 @@ h2 {
     margin-right: 0;
     font-weight: bold;
 }
+h3 { 
+    display: block;
+    font-size: 1.17em;
+    margin-top: 1em;
+    margin-bottom: 1em;
+    margin-left: 0;
+    margin-right: 0;
+    font-weight: bold;
+}
 
 .panel-title{
 	height:25px;
