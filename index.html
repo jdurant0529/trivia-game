@@ -2,45 +2,96 @@
 <html>
 	<head>
 		<meta charset="UTF-8">
-		<title>Trivia Game</title>
+		<title>NFL Team Logo Game</title>
 		<script type="text/javascript" src="https://code.jquery.com/jquery-2.2.0.min.js"></script>
 		<script type="text/javascript" src="assets/javascript/app.js"></script>
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
 		<link rel="stylesheet" type="text/css" href="assets/css/reset.css">
- 		<link rel="stylesheet" type="text/css" href="assets/css/style.css">
+		<link rel="stylesheet" type="text/css" href="assets/css/style.css">
 	</head>
 	
 <body>
+
 	<div class="wrapper">
-        <header>
-            <div class ="row"> <!-- set up single header row with 3 columns -->
-              <div class="col-sm-4"></div>  <!-- column 1 -->
-              <div class="col-sm-4"><h1>Trivia Game</h1></div><!-- column 2 -->
-              <div class="col-sm-4"></div><!-- column 3 -->
-            </div> <!-- end of header row -->
-        </header>
-	   
-          <div class = 'MainSection'>
-            <div id = 'questionSection'>
-            </div>  <!-- end of question div -->
-            <div id = 'responseSection'>
-            </div>  <!-- end of response div --> 
-            <div id = 'resultSection'>
-            </div>  <!-- end of response div --> 
-            <div id="start-button">  <!-- start of div for all buttons -->
-                <button id="start">Start</button>
-                <button id="reset">reset</button>
-            </div>  <!-- div for buttons, even though it says start-button, used for all buttons. -->
-            <div id = 'display'>00:15</div>  <!-- This div can be hidden for the most part.  -->
-       </div>  <!-- end of main section -->
+
+				<!-- <header>   -->
+					<div class="panel panel-default">
+						<div class="panel-heading">
+					   	<h1 class="panel-title">NFL Team Logo Game</h1>
+					  	</div>
+					  	<div class="panel-body">
+					 
+					<div class = 'MainSection'>
+					<div class = 'questions'>
+						<div class = 'row'>
+							<div class='col-lg-6 left'>
+								 <div id = 'questionSection'></div>  <!-- end of question div -->
+							</div> <!-- end of left side of question div -->
+							<div class='col-lg-6 right'>
+								<div id = 'buttonSection'> </div>  
+							</div> <!-- end of right side of buttons div -->
+						</div>  <!-- end of row div -->
+					</div>  <!-- end of questions div -->
+				
+
+ 	
+
+					 
+				<div id = 'responseSection'></div>  <!-- end of response div --> 
+				<div id = 'resultSection'></div>  <!-- end of response div --> 
+				<div id="start-button">  <!-- start of div for all buttons -->
+					<button id="start">Start</button>
+					<button id="reset">reset</button>
+				</div>  <!-- div for buttons, even though it says start-button, used for all buttons. -->
+					<div id = 'display'>00:15</div>  <!-- This div can be hidden for the most part.  -->
+			 	</div>  <!-- end of main section -->
+
+
+
+
+					  </div>  <!-- end of panel body -->
+					</div>
+
+<!--  						<div class ="row">  set up single header row with 3 columns
+							<div class="col-sm-4"></div>  
+							<div class="col-sm-4">NFL Logo Game</div>
+							<div class="col-sm-4"></div>
+						</div> 
+				</header>  -->
+		 
+	<!-- 			<div class = 'MainSection'>
+					<div class = 'questions'>
+						<div class = 'row'>
+							<div class='col-lg-6 left'>
+								 <div id = 'questionSection'></div>  <! end of question div -->
+					<!-- 		</div> end of left side of question div
+							<div class='col-lg-6 right'>
+								<div id = 'buttonSection'> </div>   -->
+							<!-- </div> --> <!-- end of right side of buttons div -->
+						<!-- </div> -->  <!-- end of row div -->
+					<!-- </div> -->  <!-- end of questions div --> 
+				
+
+ 	
+
+					 
+<!-- 				<div id = 'responseSection'></div>   end of response div 
+				<div id = 'resultSection'></div>  end of response div 
+				<div id="start-button">   start of div for all buttons -->
+				<!-- 	<button id="start">Start</button>
+					<button id="reset">reset</button> -->
+	<!-- 			</div>   div for buttons, even though it says start-button, used for all buttons. 
+					<div id = 'display'>00:15</div>   This div can be hidden for the most part.  
+			 	</div>   end of main section -->  
 
 		
 	
 		<footer>  <!-- start of footer -->
-            <div class = "row">
-                <div class = 'col-xl-12'><h5>Copyright 2016 - James Durant</h5></div>
-            </div>  
+						<div class = "row">
+								<div class = 'col-xl-12'><h5>Copyright 2016 - James Durant</h5></div>
+						</div>  
 		</footer>  <!-- end of footer -->
- 	</div> <!-- end of wrapper -->
+	</div> <!-- end of wrapper -->
+
 </body>
 </html>

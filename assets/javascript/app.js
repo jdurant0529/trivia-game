@@ -2,6 +2,11 @@ window.onload = function(){
  $('#start').on('click', game.start);
  $('#reset').on('click', game.reset);
  $('#reset').hide();
+ $('#questionSection').hide();
+ $('#responseSection').hide();
+ $('#resultSection').hide();
+ 
+
 };
 
 var game = {
@@ -70,8 +75,10 @@ var game = {
     	$('#reset').hide();
     	$('#resultSection').empty();
     	$('#resultSection').hide();
-    	$('#questionSection').show();
-    	$('#responseSection').show();
+    	$('#resultSection').hide();
+    //	$('#questionSection').show();
+    	$('buttonSection').show();
+    	// $('#responseSection').show();
     	$('#start').show();
   	},
   	stop: function(){
@@ -79,10 +86,13 @@ var game = {
   	},
   	
   	start: function(){
+  		$('#questions').show();
   		$('#questionSection').show();
+  		$('#buttonSection').show();
+  		$('#start-button').hide();
   		counter = setInterval(game.begin, 1000);
   		$('#start').hide();
-  	
+  		
   		game.nextQuestion(game.questionNum);
   		//$('#questionSection').html(question);
 
@@ -107,20 +117,24 @@ var game = {
 	},
 	nextQuestion: function(q){
 		$('#responseSection').hide();
+		$('#questions').show();
+		$('#buttonSection').show();
+		$('#questionSection').show();
 		
 		$('#questionSection').html('<h1>Name this team!</h1>' + game.trivia[q].image + '<div>');
 
 			for (var i = 0; i < game.trivia[q].Options.length; i++) {    // start for loop to create anwer option buttons
 			    var b = $('<button>');
+			    b.addClass("btn btn-primary");
 			    b.addClass('option ' + game.trivia[q].id);
 			    b.attr('data-option', game.trivia[q].Options[i]);
 			    b.attr('data-answer', game.trivia[q].answer);
 			    b.attr('data-num', i);
 			    b.text(game.trivia[q].Options[i]);
 			    b.attr('id',game.trivia[q].id);
-			    $("#questionSection").append(b); 
+			    $("#buttonSection").append(b); 
 			}                                    // end of for loop creating anwser option buttons
-		$('#questionSection').append('</div>');  // end new div to seperate team image from anwer option buttons
+		$('#buttonSection').append('</div>');  // end new div to seperate team image from anwer option buttons
 		var check = false;
 		// setTimeout(function(){
 		// 	check= false;
@@ -136,6 +150,9 @@ var game = {
 	nextResponse: function(c){
 		console.log(c);
 		$('#responseSection').show();
+		$('#questions').hide();
+		$('#buttonSection').hide();
+		$('#questionSection').hide();
 		
 		clearInterval(counter);
 		if (c == true) {
@@ -148,6 +165,7 @@ var game = {
 			$('#responseSection').html(responseHTML);
 		}
 		$('#questionSection').empty();
+		$('#buttonSection').empty();
 		game.questionNum++
 		
 		setTimeout(function(){
@@ -162,10 +180,14 @@ var game = {
 	showResults: function(){
 		game.stop();
     	$('#reset').show();
+    	$('star-button').show();
     	$('#questionSection').empty();
+    	$('#buttonSection').empty();
     	$('#responseSection').empty();
     	$('#questionSection').hide();
+    	$('#buttonSection').hide();
     	$('#responseSection').hide();
+
      	$('#resultSection').show();
      	var resultsHTML = '<h1>There were ' + game.questionNum + ' total questions asked.</h1>' + 
      		'<h1>You answered ' + game.correctCount	+ ' correctly.</h1>'

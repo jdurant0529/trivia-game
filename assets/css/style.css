@@ -4,12 +4,17 @@
 }
 
 body { 
-	background: url(../images/NFL_Background_Spotlight_Logos.jpg) no-repeat; 
-	background-size:100%;
+	background: url(../images/NFL_Background_Spotlight_Logos.jpg) ; 
+	background-size:25%;
+	/*filter: brightness(50%);*/
+	
+	/*opacity: .2;*/
 }
 .wrapper{
 	max-width:960px;
 	margin: 0 auto;
+
+
 }
 
 h1, h2, h3, h4, h5 {
@@ -19,43 +24,54 @@ h1, h2, h3, h4, h5 {
 }
 
 
-header{
-	height:50px;
-	margin: 15px 0 auto;
+.panel-title{
+	height:25px;
+	/*margin: 15px 0 auto;*/
 	text-align: center;
 	vertical-align: center;
-	background-color: white;
-
+	/*background-color: white;*/
 }
+
+
 
 .MainSection{
 	text-align: center;
 	background-color: white;
 	margin:15px 0px;	
+	
 }
 
+#start-button {
+	min-height: 320px
+}
 #questionSection {
 	min-height: 125px;
 }
-#questionSection button {
-	width: 100px;	
-}
+
 
 #questionSection img {
-	width: 400px;	
+	width: 400px;
+	max-height: 320px;	
 }
 
-#questionSection button:hover {
-	background:yellow;
+#buttonSection button:hover {
+	background:grey;
 }
-
+#buttonSection button {
+	width: 400px;
+	margin: 15px auto;	
+}
+#buttonSection {
+	margin: 0 auto;
+}
 #responseSection {
-	min-height: 125px;
+	min-height: 320px;
 }
 #resultSection{
-	min-height: 125px;
+	min-height: 240px;
 }
 #display{
+
   background: black;
   color:yellow;
   font-size: 40px;
@@ -66,11 +82,17 @@ header{
 
 #start-button{
   text-align: center;
+
 }
 button{
   height:50px;
   width:250px;
   margin: 15px;
+}
+
+#resltsSection{
+	text-align: center;
+
 }
 
 .right{
