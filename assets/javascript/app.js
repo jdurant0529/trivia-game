@@ -13,7 +13,7 @@ window.onload = function(){
 
 var game = {
 
-	time:15,
+	time:60,
 	questionNum : 0,
 	correctCount: 0,
 	responseTime: 3,
@@ -71,7 +71,7 @@ var game = {
 	    questionNum = Math.floor(Math.random()*game.trivia.length);
   	},
   	reset: function(){
-	    game.time = 15;
+	    game.time = 60;
 	    game.correctCount = 0;
 	    game.questionCount = 0;
 	    converted = game.timeConverter(game.time);
