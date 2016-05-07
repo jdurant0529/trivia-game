@@ -90,7 +90,7 @@ var game = {
   		counter = setInterval(game.begin, 1000);
   		$('#start').hide();
   		game.questionNum = Math.floor(Math.random()*game.trivia.length);
-		console.log(questionNum)
+
   		game.nextQuestion(game.questionNum);
   		$('#responseSection').empty();
   		$('#resultSection').empty();
