@@ -2,21 +2,14 @@
     font-family: "Scoreboard-Font";
     src: url(Get_Digital.ttf ) format("truetype");
 }
-
 body { 
 	background: url(../images/NFL_Background_Spotlight_Logos.jpg) ; 
 	background-size:25%;
-	/*filter: brightness(50%);*/
-	
-	/*opacity: .2;*/
 }
 .wrapper{
 	max-width:960px;
 	margin: 0 auto;
-
-
 }
-
 h1, h2, h3, h4, h5 {
 	font-family: 'Georgia', Times, Times New Roman, serif;
 	font-weight: 700;
@@ -49,37 +42,29 @@ h3 {
     margin-right: 0;
     font-weight: bold;
 }
-
+.panel {
+	margin-top: 15px;
+}
 .panel-title{
 	height:25px;
-	/*margin: 15px 0 auto;*/
 	text-align: center;
 	vertical-align: center;
-	/*background-color: white;*/
 }
-
-
-
 .MainSection{
 	text-align: center;
 	background-color: white;
 	margin:15px 0px;	
-	
 }
-
 #start-button {
 	min-height: 160px
 }
 #questionSection {
 	min-height: 125px;
 }
-
-
 #questionSection img {
 	width: 400px;
 	max-height: 300px;	
 }
-
 #buttonSection button:hover {
 	background:grey;
 }
@@ -106,17 +91,14 @@ h3 {
   font-family: 'Scoreboard-Font';
   text-align: center;h
 }
-
 #start-button{
   text-align: center;
-
 }
 button{
   height:50px;
   width:250px;
   margin:20px;
 }
-
 .right{
 	float:right;
 }
@@ -126,7 +108,6 @@ button{
 .clearfix{
 	clear:both;
 }
-
 footer{
 	width:100%;
 	text-align: center;
