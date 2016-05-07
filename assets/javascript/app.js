@@ -150,8 +150,12 @@ var game = {
 			check = ($(this).data('option') == $(this).data('answer'))
 			game.questionCount++;
 
+			if (game.questionCount > 32) {
+				game.showResults();
+			}else{
 			// clearTimeout();
-			game.nextResponse(check);
+				game.nextResponse(check);
+			}
 		});		//end of onclick for answer option buttons
 	},          // end of nextQuestion -- creates and adds all things pertaining to question into question Section.
 
@@ -184,7 +188,7 @@ var game = {
 			game.nextQuestion(game.questionNum)
 	  		$('#responseSection').empty();
 	  		$('#resultSection').empty();
-		}, 2000);	
+		}, 1000);	
 	},  //  end of nextResponse Section
 
 
